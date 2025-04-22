@@ -5,13 +5,18 @@ import { TodoApi } from "@/services/resources";
 function AboutScreens() {
   const { count, decrement, increment } = useCounter((state) => state);
 
+  // contoh penggunaan api
   useEffect(() => {
-    TodoApi.get()
-      .then((response) => {
-        console.log("response_from_PostApi", response);
+    TodoApi.update(2, {
+      title: "updated title",
+      description: "updated description",
+      completed: false,
+    })
+      .then((res) => {
+        console.log("res_TodoApi", res);
       })
-      .catch((error) => {
-        console.error("error from PostApi", error);
+      .catch((err) => {
+        console.log("err", err);
       });
   }, []);
 

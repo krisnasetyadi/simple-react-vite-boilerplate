@@ -1,10 +1,10 @@
 import RequestHandler from "../request-handler";
 import { ENDPOINT } from "../endpoint";
 
-class PostApi extends RequestHandler {
+class TodoApi extends RequestHandler {
   constructor() {
     super(ENDPOINT.TODO);
   }
 }
 
-export default new PostApi();
+export default new TodoApi();
